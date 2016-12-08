@@ -9,12 +9,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-
-
+# ======================
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'capybara', '~> 2.10', '>= 2.10.2'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
 end
 
 group :development do 
