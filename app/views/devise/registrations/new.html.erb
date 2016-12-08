@@ -1,8 +1,9 @@
 <section id="registraion">
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
-        <p>Signup today to start keep track of various tasks and events</p>
+      <div class="col-md-5 signupText">
+        <p>Signup today to start keeping track of your various tasks and events..</p>
+        <%= link_to 'Login', new_user_session_path, class: 'btn btn-danger' %>
       </div>
 
       <div class="col-md-7">
@@ -10,8 +11,6 @@
           <%= render 'form' %>
         </div>
       </div>
-    </div>
-  </div>
+    </div><!--/row-->
+  </div><!--/container-->
 </section>
-
-<%= render "devise/shared/links" %>
