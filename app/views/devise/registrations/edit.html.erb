@@ -1,0 +1,15 @@
+<section id="editProfile">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-4">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
