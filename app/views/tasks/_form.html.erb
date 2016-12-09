@@ -29,4 +29,7 @@
   </div>
   
   <%= f.submit (@task.new_record? ? 'Add Task' : 'Update Task'), class:'btn btn-primary' %>
+  <% unless @task.new_record? %>
+    <%= link_to 'Back', @task, class:'btn btn-default' %>
+  <% end %>
 <% end %>

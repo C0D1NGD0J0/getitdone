@@ -59,8 +59,9 @@ section{
 	padding: 0 30px;
 }
 
-
-
+/*==============
+FORM STYLING
+===============*/
 input[type="email"],
 input[type="date"],
 input[type="password"],
@@ -86,3 +87,60 @@ textarea.form-control{
 	color: #000;
 	border-radius: 0;
 }
+
+
+/*==============
+TASK SHOW PAGE
+===============*/
+#taskDetails{
+	padding: 60px 30px;
+}
+
+.t-info{
+	color: #fff;
+	text-align: left;
+	border-radius: 5px;
+	padding: 20px 5px 20px 25px;
+	background-color: rgba(255,255,255,0.6);
+	border: 1px solid rgba(255,255,255,0.4);
+}
+
+.t-info-list{
+	list-style: none;
+}
+
+.t-info-list li{
+	padding-bottom: 30px;
+}
+
+.t-info-list li h5{
+	color: #000;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.t-info-list li span{
+	padding-left: 15px;
+	font-weight: 300;
+	font-size: 2rem;
+}
+
+.details{
+	height: 410px;
+	font-weight: 300;
+	font-size: 2rem;
+}
+
+.details h4{
+	font-size: 3rem;
+	color:#000;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.t-map{
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid rgba(255,255,255,0.4);	
+}
+
