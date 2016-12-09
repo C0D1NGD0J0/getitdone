@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
 
   def index
-  	@tasks = Task.all
+  	@tasks = current_user.tasks
   end
 
   def new
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
   def update
   	if @task.update(task_params)
   		flash[:success] = "Task has been updated..."
-  		redirect_to @task
+  		redirect_to edit_task_path(@task)
   	else
   		flash.now[:danger] = "Oops!, please try again"
   		render :edit
