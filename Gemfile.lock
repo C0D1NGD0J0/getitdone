@@ -73,10 +73,15 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    dotenv (2.1.1)
+    dotenv-rails (2.1.1)
+      dotenv (= 2.1.1)
+      railties (>= 4.0, < 5.1)
     erubis (2.7.0)
     execjs (2.7.0)
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
+    geocoder (1.4.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     gritter (1.2.0)
@@ -201,7 +206,9 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner (~> 1.5, >= 1.5.3)
   devise (~> 4.2)
+  dotenv-rails
   font-awesome-rails
+  geocoder
   gritter (~> 1.2)
   jbuilder (~> 2.0)
   jquery-rails

@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   	path: '',
   	path_names: {:sign_in => 'login', :sign_out => 'logout'},
   	controllers: {registrations: 'registrations'}
+  resources :tasks
 end

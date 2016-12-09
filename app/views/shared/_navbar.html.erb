@@ -14,11 +14,11 @@
 
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><%= link_to 'Home', root_path %></li>
+        <li class="<%= active?(root_path) %>"><%= link_to 'Home', root_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to 'Tasks', '#' %></li>
-          <li><%= link_to 'Add task', '#' %></li>
-          <li><%= link_to 'Update Profile', edit_user_registration_path %></li>
+          <li class="<%= active?(tasks_path) %>"><%= link_to 'Tasks', tasks_path %></li>
+          <li class="<%= active?(new_task_path) %>"><%= link_to 'Add task', new_task_path %></li>
+          <li class="<%= active?(edit_user_registration_path) %>"><%= link_to 'Update Profile', edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li>
