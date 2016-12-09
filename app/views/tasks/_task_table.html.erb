@@ -1,0 +1,23 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>D.o.C</th>
+			<th>Location</th>
+			<th>Status</th>
+		</tr>
+	</thead>
+
+	<% @tasks.each do |task| %>
+		<tbody>
+			<tr>
+				<td><%= task.id %></td>
+				<td><%= link_to task.title, task  if task.description.present? %></td>
+				<td><%= task.date %></td>
+				<td><%= task.location %></td>
+				<td><%= task.status %></td>
+			</tr>
+		</tbody>
+	<% end %>
+</table>

@@ -1,2 +1,10 @@
-<%#= @tasks.inspect %>
-<%= link_to 'ok', @tasks.first %>
+<div id="allTasks">
+	<div class="container">
+		<div class="row">
+			<h2 class="text-center">All Tasks</h2>
+			<div class="col-md-12">
+				<%= render 'task_table' %>
+			</div>
+		</div>
+	</div>
+</div>
