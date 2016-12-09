@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20161209145341) do
     t.string   "title"
     t.text     "description"
     t.string   "location"
+    t.integer  "user_id"
     t.integer  "status",      default: 0
     t.date     "date"
     t.datetime "created_at",              null: false

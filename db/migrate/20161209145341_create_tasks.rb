@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :location
+      t.integer :user_id
       t.integer :status, default: 0
       t.date :date
 
