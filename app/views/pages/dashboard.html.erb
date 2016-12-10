@@ -7,12 +7,14 @@
 		</div><!--/row-->
 
 		<div class="row">
-			<div class="col-md-4">
-				<h4 class="page-header">Pending Tasks</h4>
-				<div class="ongoing-task-box">
-					
-				</div>
-			</div><!--/col4-->
+			<% @tasks.each do |task| %>
+				<div class="col-md-4">
+					<h4 class="page-header">Pending Tasks</h4>
+					<div class="ongoing-task-box">
+						<li><%= task.title %></li>
+					</div>
+				</div><!--/col4-->
+			<% end %>
 
 			<div class="col-md-4">
 				<h4 class="page-header">Ongoing Tasks</h4>
