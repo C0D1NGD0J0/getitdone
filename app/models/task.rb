@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
 	validates :location, allow_blank: true, length: {maximum: 40, minimum: 4}
 	validate 	:task_date_is_in_future
 
-	# geocoded_by :location
+	geocoded_by :location
 	after_validation :geocode, if: :location_changed? 
 
 	scope :pending_task, -> {where(status: 0)}

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 	end
 
 	def dashboard
-		@pendingtasks = Task.pending_task
+		@pending_tasks = Task.pending_task
 		@ongoing_tasks = Task.ongoing_task
 		@completed_tasks = Task.completed_task
 	end
