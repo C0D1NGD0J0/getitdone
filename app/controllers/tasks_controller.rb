@@ -38,6 +38,9 @@ class TasksController < ApplicationController
   end
 
   def destroy
+    @task.destroy
+    flash[:success] = "Task has been deleted!"
+    redirect_to dashboard_path
   end
 
   def status

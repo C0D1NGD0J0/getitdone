@@ -26,6 +26,13 @@
 
 						<li>
 							<%= link_to 'Update Task', edit_task_path(@task), class: 'btn btn-info' %>
+						</li>
+
+						<li>
+							<%= link_to 'Delete Task', @task, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %>
+						</li>
+
+						<li>
 							<span><%= link_to 'back', :back, class:'btn btn-primary btn-sm' %></span>
 						</li>
 					</ul>
