@@ -7,28 +7,56 @@
 		</div><!--/row-->
 
 		<div class="row">
-			<% @tasks.each do |task| %>
-				<div class="col-md-4">
-					<h4 class="page-header">Pending Tasks</h4>
-					<div class="ongoing-task-box">
-						<li><%= task.title %></li>
-					</div>
-				</div><!--/col4-->
-			<% end %>
+			<div class="col-md-4">
+				<h4 class="page-header">Pending Tasks</h4>
+				<div class="task-box">
+					<% @pendingtasks.each do |task| %>
+						<li>
+							<%= task.title %>
+							<%= task.status %> 
+							<span class="pull-right">
+								<%= link_to status_task_path(task, status: 'ongoing'), method: :put  do %>
+									<%= fa_icon 'arrow-right', class:'btn btn-primary btn-sm' %>
+								<% end %>
+							</span>
+						</li>
+					<% end %>
+				</div>
+			</div><!--/col4-->
 
 			<div class="col-md-4">
 				<h4 class="page-header">Ongoing Tasks</h4>
-				<div class="ongoing-task-box">
-					
+				<div class="task-box">
+					<% @ongoing_tasks.each do |task| %>
+						<li>
+							<%= task.title %>
+							<%= task.status %> 
+							<span class="pull-right">
+								<%= link_to status_task_path(task, status: 'completed'), method: :put  do %>
+									<%= fa_icon 'arrow-right', class: 'btn btn-primary btn-sm' %>
+								<% end %>
+							</span>
+						</li>
+					<% end %>
 				</div>
 			</div><!--/col4-->
 
 			<div class="col-md-4">
 				<h4 class="page-header">Completed Tasks</h4>
-				<div class="ongoing-task-box">
-					
+				<div class="task-box">
+					<% @completed_tasks.each do |task| %>
+						<li>
+							<%= task.title %>
+							<%= task.status %> 
+							<span class="pull-right">
+								<%= link_to status_task_path(task, status: 'ongoing'), method: :put  do %>
+									<%= fa_icon 'arrow-left', class: 'btn btn-primary btn-sm' %>
+								<% end %>
+							</span>
+						</li>
+					<% end %>
 				</div>
 			</div><!--/col4-->
-		</div>
+		</div><!--/row-->
 	</div>
 </section>
