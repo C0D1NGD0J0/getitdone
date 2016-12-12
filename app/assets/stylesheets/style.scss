@@ -183,3 +183,12 @@ TASK SHOW PAGE
 .panel-footer i{
 	color: #000;
 }
+
+.completed-task .panel-body {
+	text-decoration: line-through;
+	font-weight: 700;
+}
+
+.completed-task .panel-footer i{
+	color: #000;
+}

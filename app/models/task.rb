@@ -16,6 +16,15 @@ class Task < ActiveRecord::Base
 	scope :ongoing_task, -> {where(status: 1)}
 	scope :completed_task, -> {where(status: 2)}
 	
+	def task_panel(status)
+		if status == 'completed'
+			return 'panel-success'
+		elsif status == 'ongoing'
+			return 'panel-primary'
+		else
+			return 'panel-danger'
+		end
+	end
 	protected
 		def task_date_is_in_future
 			if date.present?
