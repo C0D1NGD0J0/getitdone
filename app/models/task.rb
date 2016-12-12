@@ -25,6 +25,7 @@ class Task < ActiveRecord::Base
 			return 'panel-danger'
 		end
 	end
+
 	protected
 		def task_date_is_in_future
 			if date.present?
