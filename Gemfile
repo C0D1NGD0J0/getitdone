@@ -16,6 +16,7 @@ gem 'devise', '~> 4.2'
 gem 'gritter', '~> 1.2'
 gem 'geocoder', '~> 1.4', '>= 1.4.1'
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'twilio-ruby', '~> 4.13'
 
 group :development, :test do
   gem 'byebug'
