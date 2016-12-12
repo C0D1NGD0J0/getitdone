@@ -208,7 +208,7 @@ DEPENDENCIES
   devise (~> 4.2)
   dotenv-rails
   font-awesome-rails
-  geocoder
+  geocoder (~> 1.4, >= 1.4.1)
   gritter (~> 1.2)
   jbuilder (~> 2.0)
   jquery-rails

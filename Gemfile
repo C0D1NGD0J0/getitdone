@@ -14,7 +14,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem "font-awesome-rails"
 gem 'devise', '~> 4.2'
 gem 'gritter', '~> 1.2'
-gem 'geocoder'
+gem 'geocoder', '~> 1.4', '>= 1.4.1'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
