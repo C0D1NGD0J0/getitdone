@@ -10,5 +10,6 @@ module SmsTool
 			to: "+#{number}",
 			body: "#{title}"
 		)
+		puts 'Sending sms...'
 	end
 end

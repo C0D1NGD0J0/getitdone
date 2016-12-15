@@ -1,7 +1,6 @@
 class Task < ActiveRecord::Base
-
 	belongs_to :user
-	enum status: {pending: 0, ongoing: 1, completed: 2}
+	enum status: {pending: 0, ongoing: 1, completed: 2, overdue: 3}
 	
 	validates :title, :description, :date, presence: true
 	validates :title, :description, uniqueness: true
@@ -15,6 +14,7 @@ class Task < ActiveRecord::Base
 	scope :pending_task, -> {where(status: 0)}
 	scope :ongoing_task, -> {where(status: 1)}
 	scope :completed_task, -> {where(status: 2)}
+	scope :overdue_task, -> {where(status: 3)}
 	
 	def task_panel(status)
 		if status == 'completed'
