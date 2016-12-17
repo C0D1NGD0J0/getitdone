@@ -4,10 +4,11 @@
   <div role="tabpanel" class="tab-pane active" id="home">
   	<div class="row">
   		<div class="col-md-12">
-  			<h2><%= Date.today %></h2>
+  			<h2>Welcome, ....</h2>
+  			<p>Below are a list of tasks/appointments scheduled for today <strong><%= Date.today %></strong></p>
   		</div>
-  	</div>
-
+  	</div><!--/row-->
+		
   	<div class="row">
   		<div class="col-md-4">
   			<h2 class="page-header">Pending</h2>
@@ -15,7 +16,7 @@
   				<% if task.todays_task %>
 		  			<div class="panel panel-danger">
 		  				<div class="panel-body">
-		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
 		  					<p><%= truncate(task.description) %></p>
 		  				</div>
 		  				<div class="panel-footer">
@@ -34,13 +35,14 @@
 		  		<% end %>
   			<% end %>
   		</div>
+
   		<div class="col-md-4">
   			<h2 class="page-header">Ongoing</h2>
   			<% @ongoing_tasks.each do |task| %>
   				<% if task.todays_task %>
 		  			<div class="panel panel-primary">
 		  				<div class="panel-body">
-		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
 		  					<p><%= truncate(task.description) %></p>
 		  				</div>
 		  				<div class="panel-footer">
@@ -66,7 +68,7 @@
   				<% if task.todays_task %>
 		  			<div class="panel panel-primary">
 		  				<div class="panel-body">
-		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
 		  					<p><%= truncate(task.description) %></p>
 		  				</div>
 		  				<div class="panel-footer">
@@ -85,6 +87,11 @@
   </div>
 
 	<div role="tabpanel" class="tab-pane" id="task">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>All Tasks</h2>
+			</div>
+		</div>
 		<table class="table">
 			<thead>
 				<tr>
@@ -108,7 +115,12 @@
 		</table>
 	</div>
 
-	<div role="tabpanel" class="tab-pane" id="apoointment">
+	<div role="tabpanel" class="tab-pane" id="appointment">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Appointments</h2>
+			</div>
+		</div>
 		<table class="table">
 			<thead>
 				<tr>

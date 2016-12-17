@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'categories/new'
+
+  get 'categories/create'
+
   root to: 'pages#home'
   get	'dashboard' => 'pages#dashboard'
   

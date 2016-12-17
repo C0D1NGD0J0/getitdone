@@ -1,8 +1,10 @@
 class Task < ActiveRecord::Base
 	belongs_to :user
+	belongs_to :category
+
 	enum status: {pending: 0, completed: 1, ongoing: 2, overdue: 3}
 	
-	validates :title, :description, :date, presence: true
+	validates :title, :description, :date, :category, presence: true
 	validates :title, :description, uniqueness: true
 	validates :description, length: {within: 10..500}
 	validates :location, allow_blank: true, length: {maximum: 40, minimum: 4}
