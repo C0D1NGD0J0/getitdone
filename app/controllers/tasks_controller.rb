@@ -2,10 +2,6 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy, :status]
   before_action :authenticate_user!
 
-  def index
-  	@tasks = current_user.tasks
-  end
-
   def new
   	@task = current_user.tasks.build
   end

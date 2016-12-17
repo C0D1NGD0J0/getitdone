@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
 	belongs_to :user
-	enum status: {pending: 0, ongoing: 1, completed: 2, overdue: 3}
+	enum status: {pending: 0, completed: 1, ongoing: 2, overdue: 3}
 	
 	validates :title, :description, :date, presence: true
 	validates :title, :description, uniqueness: true
@@ -12,18 +12,12 @@ class Task < ActiveRecord::Base
 	after_validation :geocode, if: :location_changed? 
 
 	scope :pending_task, -> {where(status: 0)}
-	scope :ongoing_task, -> {where(status: 1)}
-	scope :completed_task, -> {where(status: 2)}
+	scope :completed_task, -> {where(status: 1)}
+	scope :ongoing_task, -> {where(status: 2)}
 	scope :overdue_task, -> {where(status: 3)}
 	
-	def task_panel(status)
-		if status == 'completed'
-			return 'panel-success'
-		elsif status == 'ongoing'
-			return 'panel-primary'
-		else
-			return 'panel-danger'
-		end
+	def todays_task
+		self.date == Date.today
 	end
 
 	protected

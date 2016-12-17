@@ -1,0 +1,134 @@
+<!-- Tab panes -->
+<div class="tab-content">
+	<!-- HOME TAB PANEL -->
+  <div role="tabpanel" class="tab-pane active" id="home">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h2><%= Date.today %></h2>
+  		</div>
+  	</div>
+
+  	<div class="row">
+  		<div class="col-md-4">
+  			<h2 class="page-header">Pending</h2>
+  			<% @pending_tasks.each do |task| %>
+  				<% if task.todays_task %>
+		  			<div class="panel panel-danger">
+		  				<div class="panel-body">
+		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<p><%= truncate(task.description) %></p>
+		  				</div>
+		  				<div class="panel-footer">
+		  					<span class="pull-right">
+									<%= link_to status_task_path(task, status: 'ongoing'), method: :put  do %>
+										<%= fa_icon 'arrow-right' %>
+									<% end %>
+								</span>
+								<span class="pull-left">
+									<%= link_to status_task_path(task, status: 'completed'), method: :put  do %>
+										<%= fa_icon 'check-circle-o' %>
+									<% end %>
+								</span>
+		  				</div>
+		  			</div>
+		  		<% end %>
+  			<% end %>
+  		</div>
+  		<div class="col-md-4">
+  			<h2 class="page-header">Ongoing</h2>
+  			<% @ongoing_tasks.each do |task| %>
+  				<% if task.todays_task %>
+		  			<div class="panel panel-primary">
+		  				<div class="panel-body">
+		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<p><%= truncate(task.description) %></p>
+		  				</div>
+		  				<div class="panel-footer">
+		  					<span class="pull-right">
+									<%= link_to status_task_path(task, status: 'completed'), method: :put  do %>
+										<%= fa_icon 'check-circle-o' %>
+									<% end %>
+								</span>
+								<span class="pull-left">
+									<%= link_to status_task_path(task, status: 'pending'), method: :put  do %>
+										<%= fa_icon 'arrow-left' %>
+									<% end %>
+								</span>
+		  				</div>
+		  			</div>
+		  		<% end %>
+  			<% end %>
+  		</div>
+
+  		<div class="col-md-4">
+  			<h2 class="page-header">Completed</h2>
+  			<% @completed_tasks.each do |task| %>
+  				<% if task.todays_task %>
+		  			<div class="panel panel-primary">
+		  				<div class="panel-body">
+		  					<h2 class="page-header"><%= task.title.capitalize %></h2>
+		  					<p><%= truncate(task.description) %></p>
+		  				</div>
+		  				<div class="panel-footer">
+								<span class="pull-left">
+									<%= link_to status_task_path(task, status: 'ongoing'), method: :put  do %>
+										<%= fa_icon 'arrow-left' %>
+									<% end %>
+								</span>
+		  				</div>
+		  			</div>
+		  		<% end %>
+  			<% end %>
+  		</div>
+  	</div>
+  	<hr>
+  </div>
+
+	<div role="tabpanel" class="tab-pane" id="task">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+
+			<% @tasks.each do |task| %>
+				<tbody>
+					<tr>
+						<td><%= task.id %></td>
+						<td><%= link_to task.title, task %></td>
+						<td><%= task.date %></td>
+						<td><%= task.status %></td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+
+	<div role="tabpanel" class="tab-pane" id="apoointment">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+
+			<% @tasks.each do |task| %>
+				<tbody>
+					<tr>
+						<td><%= task.id %></td>
+						<td><%= link_to task.title, task %></td>
+						<td><%= task.date %></td>
+						<td><%= task.status %></td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+</div>

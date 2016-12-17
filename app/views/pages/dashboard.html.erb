@@ -1,26 +1,17 @@
-<section id="custom_home_page">
+<section id="dashboard">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h2 class="title">Welcome <%= current_user.last_name %>,</h2>
+			<div id='custom-tab-section'>
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+
+			    <li role="presentation"><a href="#task" aria-controls="task" role="tab" data-toggle="tab">Task</a></li>
+
+			    <li role="presentation"><a href="#appointment" aria-controls="appointment" role="tab" data-toggle="tab">Appointments</a></li>
+			  </ul>
+			  <%= render 'tab_panel' %>
 			</div>
-		</div><!--/row-->
-		
-		<div class="row">
-			<div class="col-md-4">
-				<h4 class="page-header">Pending Tasks</h4>
-				<%= render @pending_tasks %>	
-			</div><!--/col4-->
-
-			<div class="col-md-4 ongoing-task">
-				<h4 class="page-header">Ongoing Tasks</h4>
-				<%= render @ongoing_tasks %>
-			</div><!--/col4-->
-
-			<div class="col-md-4 completed-task">
-				<h4 class="page-header">Completed Tasks</h4>
-				<%= render @completed_tasks %>
-			</div><!--/col4-->
-		</div><!--/row-->
+		</div>
 	</div>
 </section>

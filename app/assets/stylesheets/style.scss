@@ -4,28 +4,23 @@
 	box-sizing: border-box;
 }
 
-html{
-	height: 100%;
-}
-
-body{
+html,body{
 	height: 100%;
 	font-size: 16px;
 	font-weight: 400; 
-	color: #fff;
+	color: #000;
 	line-height: 1.5;
-	padding-top: 50px;
-	letter-spacing: 0.5rem;
-	background-color: #231a47;
+	letter-spacing: 0.2rem;
+	background-color: #f6f6f6;
 	text-rendering: optimizeLegibility;
 }
 
 section{
-	padding: 70px 20px;
+	padding: 4rem 0;
 }
 
 i{
-	color: #fff;
+	color: #000;
 }
 
 .btn{
@@ -101,7 +96,7 @@ TASK SHOW PAGE
 }
 
 .t-info{
-	color: #fff;
+	color: #000;
 	text-align: left;
 	border-radius: 5px;
 	padding: 20px 5px 20px 25px;
@@ -150,7 +145,7 @@ TASK SHOW PAGE
 
 .table td a{
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 }
 
 
@@ -160,35 +155,6 @@ TASK SHOW PAGE
 	height: 400px;
 }
 
-.panel{
-	font-size: 90%;
-	color: #000;
-}
-
-.panel-heading a{
-	color: #000;
-	font-size: 130%;
-	text-decoration: none;
-	text-transform: uppercase;
-}
-
-.panel-heading a:hover{
-	color: #fff;
-}
-
 .panel-footer{
-	height: 35px;
-}
-
-.panel-footer i{
-	color: #000;
-}
-
-.completed-task .panel-body {
-	text-decoration: line-through;
-	font-weight: 700;
-}
-
-.completed-task .panel-footer i{
-	color: #000;
+	min-height: 40px;
 }
