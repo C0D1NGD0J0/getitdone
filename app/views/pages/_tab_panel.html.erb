@@ -4,7 +4,8 @@
   <div role="tabpanel" class="tab-pane active" id="home">
   	<div class="row">
   		<div class="col-md-12">
-  			<h2>Welcome, ....</h2>
+  			<h2>Welcome, <%= current_user.full_name %></h2>
+  			<p>The time is <%= Time.now.utc.strftime('%H:%M %p') %></p>
   			<p>Below are a list of tasks/appointments scheduled for today <strong><%= Date.today %></strong></p>
   		</div>
   	</div><!--/row-->
@@ -82,65 +83,74 @@
 		  		<% end %>
   			<% end %>
   		</div>
-  	</div>
+  	</div><!--/row-->
   	<hr>
-  </div>
+  </div><!--/homepanel-->
 
 	<div role="tabpanel" class="tab-pane" id="task">
 		<div class="row">
 			<div class="col-md-12">
 				<h2>All Tasks</h2>
 			</div>
-		</div>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Title</th>
-					<th>Date</th>
-					<th>Status</th>
-				</tr>
-			</thead>
+		</div><!--/row-->
 
-			<% @tasks.each do |task| %>
-				<tbody>
-					<tr>
-						<td><%= task.id %></td>
-						<td><%= link_to task.title, task %></td>
-						<td><%= task.date %></td>
-						<td><%= task.status %></td>
-					</tr>
-				</tbody>
-			<% end %>
-		</table>
-	</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Title</th>
+							<th>Date</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<% @tasks.each do |task| %>
+						<tbody>
+							<tr>
+								<td><%= task.id %></td>
+								<td><%= link_to task.title, task %></td>
+								<td><%= task.date %></td>
+								<td><%= task.status %></td>
+							</tr>
+						</tbody>
+					<% end %>
+				</table>
+			</div><!--/col12-->
+		</div><!--/row-->
+	</div><!--/taskpanel-->
 
 	<div role="tabpanel" class="tab-pane" id="appointment">
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Appointments</h2>
 			</div>
-		</div>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>#</th>
-					<th>Title</th>
-					<th>Date</th>
-					<th>Status</th>
-				</tr>
-			</thead>
+		</div><!--/row-->
 
-			<% @tasks.each do |task| %>
-				<tbody>
-					<tr>
-						<td><%= task.id %></td>
-						<td><%= link_to task.title, task %></td>
-						<td><%= task.date %></td>
-						<td><%= task.status %></td>
-					</tr>
-				</tbody>
-			<% end %>
-		</table>
-	</div>
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Title</th>
+							<th>Date</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+
+					<% @appointments.each do |task| %>
+						<tbody>
+							<tr>
+								<td><%= task.id %></td>
+								<td><%= link_to task.title, task %></td>
+								<td><%= task.date %></td>
+								<td><%= task.status %></td>
+							</tr>
+						</tbody>
+					<% end %>
+				</table>				
+			</div><!--/col12-->
+		</div><!--/row-->
+	</div><!--/appointpanel-->
 </div>

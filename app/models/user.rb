@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates :phone, length: {minimum: 10, maximum: 18}
   validates_format_of :phone, with: PHONE_REGEX
   validates :first_name, :last_name, length: {within: 3..15}
+
+  def full_name
+  	first_name + ' ' + last_name
+  end
 end

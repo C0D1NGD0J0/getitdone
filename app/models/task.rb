@@ -17,6 +17,8 @@ class Task < ActiveRecord::Base
 	scope :completed_task, -> {where(status: 1)}
 	scope :ongoing_task, -> {where(status: 2)}
 	scope :overdue_task, -> {where(status: 3)}
+	scope :appointments, -> { joins(:category).where('categories.name = ?', 'appointment')}
+	scope :task_category, -> { joins(:category).where('categories.name = ?', 'task')}
 	
 	def todays_task
 		self.date == Date.today
