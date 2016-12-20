@@ -17,6 +17,7 @@ gem 'gritter', '~> 1.2'
 gem 'geocoder', '~> 1.4', '>= 1.4.1'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twilio-ruby', '~> 4.13'
+gem 'forecast_io'
 
 group :development, :test do
   gem 'byebug'

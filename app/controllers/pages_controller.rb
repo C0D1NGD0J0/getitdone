@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
 	def dashboard
 		@appointments = Task.appointments
-		@tasks = Task.task_category
+		@tasks = Task.todo
 		@pending_tasks = Task.pending_task
 		@ongoing_tasks = Task.ongoing_task
 		@completed_tasks = Task.completed_task

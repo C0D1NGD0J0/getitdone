@@ -18,10 +18,14 @@ class Task < ActiveRecord::Base
 	scope :ongoing_task, -> {where(status: 2)}
 	scope :overdue_task, -> {where(status: 3)}
 	scope :appointments, -> { joins(:category).where('categories.name = ?', 'appointment')}
-	scope :task_category, -> { joins(:category).where('categories.name = ?', 'task')}
+	scope :todo, -> { joins(:category).where('categories.name = ?', 'todo')}
 	
 	def todays_task
 		self.date == Date.today
+	end
+
+	def get_weather_data
+		ForecastIO.forecast(self.latitude, self.longitude)
 	end
 
 	protected

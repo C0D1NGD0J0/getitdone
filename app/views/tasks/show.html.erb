@@ -39,6 +39,8 @@
 				<div class="t-info details">
 					<h4>Description</h4>
 					<p><%= @task.description %></p>
+					<!-- <p><%#= Time.at(@task.get_weather_data.currently.time).strftime('%I:%M %p') %></p> -->
+					<p><%= @task.get_weather_data.timezone %></p>
 				</div><!--/col8-->
 			</div><!--details-->
 		</div><!--/row-->
