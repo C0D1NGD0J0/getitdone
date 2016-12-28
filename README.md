@@ -29,6 +29,7 @@ GetitDone is a task manager application created with the purpose of helping user
 
 ### Unsolved issues
 	* Properly displaying Weather info
+	* Custom rake task for overdue tasks
 	*	Email confirmation upon registration
 
 ### To Do
