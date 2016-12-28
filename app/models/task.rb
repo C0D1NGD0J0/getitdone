@@ -31,10 +31,6 @@ class Task < ActiveRecord::Base
 	def date_to_time(date)
 		Time.zone.at(date.to_time).to_i
 	end
-	
-	def self.overdue_tasks
-		date < Date.today && status == 'pending'
-	end
 
 	protected
 		def task_date_is_in_future
