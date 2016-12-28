@@ -157,4 +157,39 @@
 			</div><!--/col12-->
 		</div><!--/row-->
 	</div><!--/appointpanel-->
+
+	<div role="tabpanel" class="tab-pane" id="overdue">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Overdue Tasks</h2>
+			</div>
+		</div><!--/row-->
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Title</th>
+							<th>Date</th>
+							<th>Location</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<% @overdue_task.each do |task| %>
+						<tbody>
+							<tr>
+								<td><%= task.id %></td>
+								<td><%= link_to task.title, task %></td>
+								<td><%= task.date %></td>
+								<td><%= task.location %></td>
+								<td><%= task.status %></td>
+							</tr>
+						</tbody>
+					<% end %>
+				</table>
+			</div><!--/col12-->
+		</div><!--/row-->
+	</div><!--/taskpanel-->
 </div>

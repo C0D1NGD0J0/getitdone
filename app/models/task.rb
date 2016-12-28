@@ -23,9 +23,17 @@ class Task < ActiveRecord::Base
 	def todays_task
 		self.date == Date.today
 	end
-
+	
 	def get_weather_data
-		ForecastIO.forecast(self.latitude, self.longitude)
+		ForecastIO.forecast(self.latitude, self.longitude, time: date_to_time(self.date))
+	end
+
+	def date_to_time(date)
+		Time.zone.at(date.to_time).to_i
+	end
+	
+	def self.overdue_tasks
+		date < Date.today && status == 'pending'
 	end
 
 	protected
