@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
 	validates :title, :description, uniqueness: true
 	validates :description, length: {within: 10..500}
 	validates :location, allow_blank: true, length: {maximum: 40, minimum: 4}
-	validate 	:task_date_is_in_future
+	validate 	:task_date_is_in_future, on: :create
 
 	geocoded_by :location
 	after_validation :geocode, if: :location_changed? 
