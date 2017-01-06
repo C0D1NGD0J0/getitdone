@@ -8,11 +8,11 @@ class PagesController < ApplicationController
 	end
 
 	def dashboard
-		@appointments = Task.appointments
-		@tasks = Task.todo
-		@overdue_tasks = Task.overdue_task
-		@pending_tasks = Task.pending_task
-		@ongoing_tasks = Task.ongoing_task
-		@completed_tasks = Task.completed_task
+		@appointments = current_user.tasks.appointments
+		@tasks = current_user.tasks.todo
+		@overdue_tasks = current_user.tasks.overdue_task
+		@pending_tasks = current_user.tasks.pending_task
+		@ongoing_tasks = current_user.tasks.ongoing_task
+		@completed_tasks = current_user.tasks.completed_task
 	end
 end

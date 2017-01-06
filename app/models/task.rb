@@ -5,7 +5,6 @@ class Task < ActiveRecord::Base
 	enum status: {pending: 0, completed: 1, ongoing: 2, overdue: 3}
 	
 	validates :title, :description, :date, :category, presence: true
-	validates :title, :description, uniqueness: true
 	validates :description, length: {within: 10..500}
 	validates :location, allow_blank: true, length: {maximum: 40, minimum: 4}
 	validate 	:task_date_is_in_future, on: :create
