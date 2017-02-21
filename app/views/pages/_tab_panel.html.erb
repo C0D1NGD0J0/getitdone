@@ -14,7 +14,7 @@
   		<div class="col-md-4">
   			<h2 class="page-header">Pending</h2>
   			<% @pending_tasks.each do |task| %>
-  				<% if task.todays_task %>
+  				<%# if task.todays_task %>
 		  			<div class="panel panel-danger">
 		  				<div class="panel-body">
 		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
@@ -33,14 +33,14 @@
 								</span>
 		  				</div>
 		  			</div>
-		  		<% end %>
+		  		<%# end %>
   			<% end %>
   		</div>
 
   		<div class="col-md-4">
   			<h2 class="page-header">Ongoing</h2>
   			<% @ongoing_tasks.each do |task| %>
-  				<% if task.todays_task %>
+  				<%# if task.todays_task %>
 		  			<div class="panel panel-primary">
 		  				<div class="panel-body">
 		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
@@ -59,14 +59,14 @@
 								</span>
 		  				</div>
 		  			</div>
-		  		<% end %>
+		  		<%# end %>
   			<% end %>
   		</div>
 
   		<div class="col-md-4">
   			<h2 class="page-header">Completed</h2>
   			<% @completed_tasks.each do |task| %>
-  				<% if task.todays_task %>
+  				<%# if task.todays_task %>
 		  			<div class="panel panel-primary">
 		  				<div class="panel-body">
 		  					<h2 class="page-header"><%= link_to task.title.capitalize, task %></h2>
@@ -80,7 +80,7 @@
 								</span>
 		  				</div>
 		  			</div>
-		  		<% end %>
+		  		<%# end %>
   			<% end %>
   		</div>
   	</div><!--/row-->
