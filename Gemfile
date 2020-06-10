@@ -14,7 +14,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem "font-awesome-rails"
 gem 'devise', '~> 4.7'
 gem 'gritter', '~> 1.2'
-gem 'geocoder', '~> 1.4', '>= 1.4.1'
+gem 'geocoder', '~> 1.6'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'twilio-ruby', '~> 4.13'
 gem 'forecast_io'
